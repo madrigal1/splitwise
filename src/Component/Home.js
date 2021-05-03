@@ -102,7 +102,7 @@ const Home = () => {
                   {row.person1}
                 </TableCell>
                 <TableCell align="center">{row.person2}</TableCell>
-                <TableCell align="center">{row.amount}</TableCell>
+                <TableCell align="center" className="amount">{row.amount}</TableCell>
               </TableRow>
             ))}
             <TableRow>
@@ -214,12 +214,33 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <>
+    {/* <div className="sauce">
+
+    </div> */}
+    <div className="main_container">
+      <h1>Splitwise</h1>
       <div className="name-component">
         <div className="p-name">
           <h2>Enter names of People in the group</h2>
           <div className="p-name-field">
-            <TextField id="outlined-basic" label="Name"
+            <TextField id="outlined-basic" 
+              label="Enter Names"
+              style={{
+                  marginLeft: 'auto',
+                  marginRight: 'auto',            
+                  paddingBottom: 0,
+                  marginTop: 0,
+                  fontWeight: 500,
+                  color:'white',
+              }}
+              InputLabelProps={{
+                style: {
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  width: '100%',
+                  color: 'white'
+                } }}
               variant="outlined"
               value={name}
               disabled={flag}
@@ -340,6 +361,7 @@ const Home = () => {
         </>
       ) : null}
     </div>
+    </>
   )
 }
 
